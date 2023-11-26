@@ -6,18 +6,21 @@ import {ReactComponent as AlarmOn} from '../../assets/alarmOn.svg';
 import {ReactComponent as AlarmOff} from '../../assets/alarmOff.svg';
 import {ReactComponent as AlarmNeutral} from '../../assets/alarmNetural.svg';
 import {getTools} from "../../api/getTools";
+import {data} from "./dataFromBack";
 
 const MainPage = () => {
   const [tools, setTools] = useState([])
 
-  useEffect(() => {
-    getTools().then(
-      res => {
-        setTools(res.tool);
-        console.log(res.tool)
-      }
-    )
-  }, [setTools]);
+  // useEffect(() => {
+  //   getTools().then(
+  //     res => {
+  //       setTools(res.tool);
+  //       console.log(res.tool)
+  //     }
+  //   )
+  // }, [setTools]); // Если запустить бекенд локально, то тут отправится запрос, и с него получатся данные.
+
+  setTools(data.tool)
 
   return (
     <div className='MainPage'>
