@@ -11,16 +11,14 @@ import {data} from "./dataFromBack";
 const MainPage = () => {
   const [tools, setTools] = useState([])
 
-  // useEffect(() => {
+  useEffect(() => {
   //   getTools().then(
   //     res => {
-  //       setTools(res.tool);
-  //       console.log(res.tool)
-  //     }
-  //   )
-  // }, [setTools]); // Если запустить бекенд локально, то тут отправится запрос, и с него получатся данные.
+  //     setTools(res.tool);
+      setTools(data.tool)
+  }, [setTools]); // Если запустить бекенд локально, то тут отправится запрос, и с него получатся данные.
 
-  setTools(data.tool)
+
 
   return (
     <div className='MainPage'>
